@@ -18,7 +18,8 @@ Windows 上で Fish シェルを使用するための設定と関数を提供
 
 ## Windows Terminal にプロファイルを追加
 
-「新しいプロファイルを追加します」から Windows Terminal に Fish シェルのプロファイルを追加
+* 「新しいプロファイルを追加します」から Windows Terminal に Fish シェルのプロファイルを追加
+* 既定値 > 外観 > フォント フェイスを `FiraCode Nerd Font Mono` に設定
 
 <p align="center">
   <img src="imgs/windows_terminal.jpg">
@@ -61,7 +62,12 @@ db_gecos: cygwin desc
 ## 設定の適用
 
 1. リポジトリをクローン
-2. `config.fish` と `functions/` を `~/.config/fish` にコピー
+2. 以下を `~/.config/fish` にコピー
+   * `completions/`
+   * `conf.d/`
+   * `functions/`
+   * `config.fish`
+   * `fish_config.fish`
 
 ## VS Code の設定
 
@@ -82,5 +88,7 @@ VS Code の設定ファイル `settings.json` に以下を追加
             ]
         },
     }
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontSize": 16,
 }
 ```
