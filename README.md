@@ -62,3 +62,25 @@ db_gecos: cygwin desc
 
 1. リポジトリをクローン
 2. `config.fish` と `functions/` を `~/.config/fish` にコピー
+
+## VS Code の設定
+
+VS Code の設定ファイル `settings.json` に以下を追加
+
+```settings.json
+{
+    "terminal.integrated.defaultProfile.windows": "fish",
+    "terminal.integrated.profiles.windows": {
+        "fish": {
+            "path": "C:\\msys64\\msys2_shell.cmd",
+            "args": [
+                "-mingw64",
+                "-defterm",
+                "-no-start",
+                "-shell",
+                "fish"
+            ]
+        },
+    }
+}
+```
