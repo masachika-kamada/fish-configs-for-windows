@@ -1,4 +1,6 @@
-cd ~/
+if test "$TERM_PROGRAM" != "vscode"
+    cd ~/
+end
 
 for file in ~/.config/fish/functions/**.fish
     source $file
