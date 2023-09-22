@@ -19,7 +19,8 @@ Windows 上で Fish シェルを使用するための設定と関数を提供
 ## Windows Terminal にプロファイルを追加
 
 * 「新しいプロファイルを追加します」から Windows Terminal に Fish シェルのプロファイルを追加
-* 既定値 > 外観 > フォント フェイスを `FiraCode Nerd Font Mono` に設定
+* 既定値 > 外観 > フォント フェイスを `Cousine Nerd Font` に設定
+* フォントのダウンロードは [ここ](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Cousine/Regular/CousineNerdFont-Regular.ttf) から
 
 <p align="center">
   <img src="imgs/windows_terminal.jpg">
