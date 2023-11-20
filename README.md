@@ -93,3 +93,26 @@ VS Code の設定ファイル `settings.json` に以下を追加
     "terminal.integrated.fontSize": 16,
 }
 ```
+
+## Windows との環境変数の共有
+
+1. PC 起動時に `export_env.ps1` で環境変数を `windows_env.txt` に出力
+2. fish 起動時に `windows_env.txt` を読み込んで環境変数を設定
+
+という流れで、Windows との環境変数の共有を行う
+
+1 の `export_env.ps1` を自動実行させるために、タスクスケジューラを使用
+
+### タスクスケジューラの設定
+
+1. タスクスケジューラを起動 (Win + R で `taskschd.msc`)
+2. 「タスクの作成」をクリック
+3. 全般タブ
+   * 名前: `環境変数のエクスポート`
+4. トリガータブ > 新規
+   * タスクの開始: `ログオン時`
+5. 操作タブ > 新規
+   * 操作: `プログラムの開始`
+   * プログラム/スクリプト: `powershell.exe`
+   * 引数の追加: `-File "C:\Users\[user_name]\.config\fish\export_env.ps1"`
+   * 開始: `C:\Users\[user_name]\.config\fish`
