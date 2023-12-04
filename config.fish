@@ -23,9 +23,11 @@ if test -f ~/.config/fish/windows_env.txt
 
     # ';' で区切って各パスを環境変数に追加
     for path in (string split ';' $paths)
+        # パスを小文字に変換
+        set lower_path (string lower -- $path)
         # Anaconda と system32 は除外
-        if not string match -q '*Anaconda*' -- $path
-            if not string match -q '/C/WINDOWS/system32' -- $path
+        if not string match -q '*anaconda*' -- $lower_path
+            if not string match -q '/c/windows/system32' -- $lower_path
                 set -x PATH $path $PATH
             end
         end
