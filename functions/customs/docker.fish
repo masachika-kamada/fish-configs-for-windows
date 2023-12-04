@@ -28,6 +28,10 @@ function desh
     docker exec -it (dcur) sh
 end
 
+function defish
+    docker exec -it (dcur) fish
+end
+
 function dstart
     docker start $argv
 end
