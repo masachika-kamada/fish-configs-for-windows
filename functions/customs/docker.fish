@@ -1,19 +1,19 @@
 set -g PATH "/c/Program Files/Docker/Docker/resources/bin" $PATH
 
 function di
-    docker images
+    docker images --format "table {{.ID}}\t{{.Repository | printf \"%-.40s\"}}\t{{.Tag}}\t{{.CreatedSince}}\t{{.Size}}"
 end
 
 function dp
-    docker ps
+    docker ps --format "table {{.ID}}\t{{.Image | printf \"%-.30s\"}}\t{{.Command}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
 end
 
 function dpa
-    docker ps -a
+    docker ps -a --format "table {{.ID}}\t{{.Image | printf \"%-.30s\"}}\t{{.Command}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
 end
 
 function psa
-    docker ps -a
+    docker ps -a --format "table {{.ID}}\t{{.Image | printf \"%-.30s\"}}\t{{.Command}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
 end
 
 function dcur
